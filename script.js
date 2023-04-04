@@ -15,7 +15,18 @@ const configuration = {
 };
 let room;
 let pc;
-  
+  const firebaseConfig = {
+  apiKey: "AIzaSyDjdHKJiE9_0-pGZTqfRWIc_YNvYh7dIyg",
+  authDomain: "new-ascii-test.firebaseapp.com",
+  projectId: "new-ascii-test",
+  storageBucket: "new-ascii-test.appspot.com",
+  messagingSenderId: "455636189959",
+  appId: "1:455636189959:web:ceb7d59a1702505e86bba2",
+  measurementId: "G-F38CHL5MY7"
+};
+firebase.initializeApp(firebaseConfig);
+const dmsgs = firebase.database().ref("msgs");
+dmsgs.set(roomHash);
   
 function onSuccess() {};
 function onError(error) {
